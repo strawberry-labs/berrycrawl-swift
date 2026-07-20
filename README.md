@@ -1,9 +1,10 @@
-# Berrycrawl Swift Library
+# Berrycrawl Swift SDK
 
-[![fern shield](https://img.shields.io/badge/%F0%9F%8C%BF-Built%20with%20Fern-brightgreen)](https://buildwithfern.com?utm_source=github&utm_medium=github&utm_campaign=readme&utm_source=Berrycrawl%2FSwift)
 ![SwiftPM compatible](https://img.shields.io/badge/SwiftPM-compatible-orange.svg)
 
-The Berrycrawl Swift library provides convenient access to the Berrycrawl APIs from Swift.
+The official Swift SDK for scraping, crawling, searching, mapping, structured extraction, screenshots, and brand profiles.
+
+[Documentation](https://docs.berrycrawl.com) · [Dashboard](https://app.berrycrawl.com) · [GitHub](https://github.com/strawberry-labs/berrycrawl-swift)
 
 ## Table of Contents
 
@@ -36,7 +37,7 @@ With Swift Package Manager (SPM), add the following to the top-level `dependenci
 
 ```swift
 dependencies: [
-    .package(url: "<git-url>", from: "0.1.0"),
+    .package(url: "https://github.com/strawberry-labs/berrycrawl-swift.git", from: "0.1.0"),
 ]
 ```
 
@@ -46,19 +47,36 @@ A full reference for this library is available [here](./reference.md).
 
 ## Usage
 
-Instantiate and use the client with the following:
+Set `BERRYCRAWL_API_KEY` to an API key from the [Berrycrawl dashboard](https://app.berrycrawl.com).
 
 ```swift
-import Foundation
 import Berrycrawl
+import Foundation
 
-private func main() async throws {
-    let client = Berrycrawl(apiKey: "<token>")
+let client = Berrycrawl(apiKey: ProcessInfo.processInfo.environment["BERRYCRAWL_API_KEY"]!)
+let page = try await client.scrape(
+    request: .init(url: "https://example.com/pricing")
+)
+```
 
-    _ = try await client.brand.retrieve(request: .init(url: "https://stripe.com"))
-}
+### Crawl and search
 
-try await main()
+```swift
+let job = try await client.crawl(
+    request: .init(limit: 50, url: "https://example.com/docs")
+)
+
+let results = try await client.search(
+    request: .init(limit: 10, query: "best headless browser libraries")
+)
+```
+
+### Retrieve a brand profile
+
+```swift
+let brand = try await client.brand.retrieve(
+    request: .init(url: "https://stripe.com")
+)
 ```
 
 ## Environments
