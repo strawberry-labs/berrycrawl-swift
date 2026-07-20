@@ -3,7 +3,6 @@ import Foundation
 public struct SearchResponse: Codable, Hashable, Sendable {
     public let creditsUsed: Int
     public let data: [SearchResult]
-    public let provider: SearchResponseProvider
     public let query: String
     public let success: Bool
     public let total: Int
@@ -13,7 +12,6 @@ public struct SearchResponse: Codable, Hashable, Sendable {
     public init(
         creditsUsed: Int,
         data: [SearchResult],
-        provider: SearchResponseProvider,
         query: String,
         success: Bool,
         total: Int,
@@ -21,7 +19,6 @@ public struct SearchResponse: Codable, Hashable, Sendable {
     ) {
         self.creditsUsed = creditsUsed
         self.data = data
-        self.provider = provider
         self.query = query
         self.success = success
         self.total = total
@@ -32,7 +29,6 @@ public struct SearchResponse: Codable, Hashable, Sendable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.creditsUsed = try container.decode(Int.self, forKey: .creditsUsed)
         self.data = try container.decode([SearchResult].self, forKey: .data)
-        self.provider = try container.decode(SearchResponseProvider.self, forKey: .provider)
         self.query = try container.decode(String.self, forKey: .query)
         self.success = try container.decode(Bool.self, forKey: .success)
         self.total = try container.decode(Int.self, forKey: .total)
@@ -44,7 +40,6 @@ public struct SearchResponse: Codable, Hashable, Sendable {
         try encoder.encodeAdditionalProperties(self.additionalProperties)
         try container.encode(self.creditsUsed, forKey: .creditsUsed)
         try container.encode(self.data, forKey: .data)
-        try container.encode(self.provider, forKey: .provider)
         try container.encode(self.query, forKey: .query)
         try container.encode(self.success, forKey: .success)
         try container.encode(self.total, forKey: .total)
@@ -54,7 +49,6 @@ public struct SearchResponse: Codable, Hashable, Sendable {
     enum CodingKeys: String, CodingKey, CaseIterable {
         case creditsUsed
         case data
-        case provider
         case query
         case success
         case total
