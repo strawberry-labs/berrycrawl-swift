@@ -11,6 +11,30 @@ import Berrycrawl
                 {
                   "data": {
                     "brand": {
+                      "branding": {
+                        "colors": {},
+                        "colorScheme": "light",
+                        "components": {},
+                        "images": {},
+                        "spacing": {
+                          "baseUnit": 1.1
+                        },
+                        "typography": {
+                          "fontFamilies": {},
+                          "fontSizes": {},
+                          "fontStacks": {
+                            "body": [
+                              "body"
+                            ],
+                            "heading": [
+                              "heading"
+                            ],
+                            "paragraph": [
+                              "paragraph"
+                            ]
+                          }
+                        }
+                      },
                       "colors": [
                         {
                           "hex": "hex"
@@ -65,6 +89,40 @@ import Berrycrawl
         let expectedResponse = BrandResponse(
             data: BrandResponseData(
                 brand: BrandProfile(
+                    branding: Optional(BrandDesignSystem(
+                        colors: BrandDesignSystemColors(
+
+                        ),
+                        colorScheme: .light,
+                        components: BrandDesignSystemComponents(
+
+                        ),
+                        images: BrandDesignSystemImages(
+
+                        ),
+                        spacing: BrandDesignSystemSpacing(
+                            baseUnit: 1.1
+                        ),
+                        typography: BrandDesignSystemTypography(
+                            fontFamilies: BrandDesignSystemTypographyFontFamilies(
+
+                            ),
+                            fontSizes: BrandDesignSystemTypographyFontSizes(
+
+                            ),
+                            fontStacks: BrandDesignSystemTypographyFontStacks(
+                                body: [
+                                    "body"
+                                ],
+                                heading: [
+                                    "heading"
+                                ],
+                                paragraph: [
+                                    "paragraph"
+                                ]
+                            )
+                        )
+                    )),
                     colors: [
                         BrandProfileColorsItem(
                             hex: "hex"
@@ -83,7 +141,7 @@ import Berrycrawl
                             url: "url"
                         )
                     ],
-                    language: Optional("language"),
+                    language: Optional(Nullable<String>.value("language")),
                     logos: [
                         BrandAsset(
                             type: "type",
@@ -123,6 +181,74 @@ import Berrycrawl
                 {
                   "data": {
                     "brand": {
+                      "branding": {
+                        "colors": {
+                          "accent": "accent",
+                          "background": "background",
+                          "link": "link",
+                          "primary": "primary",
+                          "secondary": "secondary",
+                          "textPrimary": "textPrimary"
+                        },
+                        "colorScheme": "light",
+                        "components": {
+                          "buttonPrimary": {
+                            "background": "background",
+                            "borderColor": "borderColor",
+                            "borderRadius": "borderRadius",
+                            "shadow": "shadow",
+                            "textColor": "textColor"
+                          },
+                          "buttonSecondary": {
+                            "background": "background",
+                            "borderColor": "borderColor",
+                            "borderRadius": "borderRadius",
+                            "shadow": "shadow",
+                            "textColor": "textColor"
+                          },
+                          "input": {
+                            "background": "background",
+                            "borderColor": "borderColor",
+                            "borderRadius": "borderRadius",
+                            "shadow": "shadow",
+                            "textColor": "textColor"
+                          }
+                        },
+                        "images": {
+                          "favicon": "favicon",
+                          "logo": "logo",
+                          "ogImage": "ogImage"
+                        },
+                        "spacing": {
+                          "baseUnit": 1.1,
+                          "borderRadius": "borderRadius"
+                        },
+                        "typography": {
+                          "fontFamilies": {
+                            "heading": "heading",
+                            "primary": "primary"
+                          },
+                          "fontSizes": {
+                            "body": "body",
+                            "h1": "h1",
+                            "h2": "h2"
+                          },
+                          "fontStacks": {
+                            "body": [
+                              "body",
+                              "body"
+                            ],
+                            "heading": [
+                              "heading",
+                              "heading"
+                            ],
+                            "paragraph": [
+                              "paragraph",
+                              "paragraph"
+                            ]
+                          }
+                        }
+                      },
                       "colors": [
                         {
                           "hex": "hex",
@@ -217,6 +343,74 @@ import Berrycrawl
         let expectedResponse = BrandResponse(
             data: BrandResponseData(
                 brand: BrandProfile(
+                    branding: Optional(BrandDesignSystem(
+                        colors: BrandDesignSystemColors(
+                            accent: Optional("accent"),
+                            background: Optional("background"),
+                            link: Optional("link"),
+                            primary: Optional("primary"),
+                            secondary: Optional("secondary"),
+                            textPrimary: Optional("textPrimary")
+                        ),
+                        colorScheme: .light,
+                        components: BrandDesignSystemComponents(
+                            buttonPrimary: Optional(BrandComponentStyle(
+                                background: Optional("background"),
+                                borderColor: Optional("borderColor"),
+                                borderRadius: Optional("borderRadius"),
+                                shadow: Optional("shadow"),
+                                textColor: Optional("textColor")
+                            )),
+                            buttonSecondary: Optional(BrandComponentStyle(
+                                background: Optional("background"),
+                                borderColor: Optional("borderColor"),
+                                borderRadius: Optional("borderRadius"),
+                                shadow: Optional("shadow"),
+                                textColor: Optional("textColor")
+                            )),
+                            input: Optional(BrandComponentStyle(
+                                background: Optional("background"),
+                                borderColor: Optional("borderColor"),
+                                borderRadius: Optional("borderRadius"),
+                                shadow: Optional("shadow"),
+                                textColor: Optional("textColor")
+                            ))
+                        ),
+                        images: BrandDesignSystemImages(
+                            favicon: Optional("favicon"),
+                            logo: Optional("logo"),
+                            ogImage: Optional("ogImage")
+                        ),
+                        spacing: BrandDesignSystemSpacing(
+                            baseUnit: 1.1,
+                            borderRadius: Optional("borderRadius")
+                        ),
+                        typography: BrandDesignSystemTypography(
+                            fontFamilies: BrandDesignSystemTypographyFontFamilies(
+                                heading: Optional("heading"),
+                                primary: Optional("primary")
+                            ),
+                            fontSizes: BrandDesignSystemTypographyFontSizes(
+                                body: Optional("body"),
+                                h1: Optional("h1"),
+                                h2: Optional("h2")
+                            ),
+                            fontStacks: BrandDesignSystemTypographyFontStacks(
+                                body: [
+                                    "body",
+                                    "body"
+                                ],
+                                heading: [
+                                    "heading",
+                                    "heading"
+                                ],
+                                paragraph: [
+                                    "paragraph",
+                                    "paragraph"
+                                ]
+                            )
+                        )
+                    )),
                     colors: [
                         BrandProfileColorsItem(
                             hex: "hex",
@@ -261,7 +455,7 @@ import Berrycrawl
                             width: Optional(1)
                         )
                     ],
-                    language: Optional("language"),
+                    language: Optional(Nullable<String>.value("language")),
                     logos: [
                         BrandAsset(
                             height: Optional(1),
