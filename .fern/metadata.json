@@ -1,0 +1,14 @@
+{
+  "cliVersion": "5.72.1",
+  "generatorName": "fernapi/fern-swift-sdk",
+  "generatorVersion": "0.35.16",
+  "generatorConfig": {
+    "clientClassName": "Berrycrawl",
+    "environmentEnumName": "BerrycrawlEnvironment",
+    "moduleName": "Berrycrawl"
+  },
+  "originGitCommit": "a392c48ac4c6239a0801aa8866d9ad06f5f10496",
+  "originGitCommitIsDirty": true,
+  "invokedBy": "manual",
+  "requestedVersion": "0.1.0"
+}
